@@ -10,18 +10,28 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zelhaspinfitness.co.ke"),
-  title: "Zelha Spin & Fitness | Gym in Juja, Kenya",
+  title: "Zelha Spin and Fitness Gym | Juja, Kenya",
   description:
-    "Zelha Spin & Fitness is a fitness center in Juja offering spinning, strength training, dance fitness, HIIT, and personal coaching near Equity Afya.",
-  applicationName: "Zelha Spin & Fitness",
+    "Zelha Spin and Fitness Gym is located at Kalimoni Highway View Plaza (Former Uchumi), Juja, Kenya. We offer spin classes, HIIT, strength training, Zumba, boot camp, personal training and outdoor hikes.",
+  applicationName: "Zelha Spin and Fitness Gym",
   keywords: [
     "gym in Juja",
     "fitness center in Juja",
     "spinning classes in Juja",
-    "gym near Equity Afya Juja",
-    "fitness training in Juja Kenya"
-  ]
+    "HIIT classes Juja",
+    "Zumba Juja",
+    "boot camp Juja",
+    "personal training Juja Kenya",
+    "Kalimoni Highway View Plaza gym",
+    "Zelha Fitness",
+    "zelhafitness"
+  ],
+  icons: {
+    icon: "/img/LOGO4.png",
+    apple: "/img/LOGO4.png"
+  }
 };
+
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -42,7 +52,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <script src="https://kit.fontawesome.com/3b7003e6ac.js" crossOrigin="anonymous" async />
       </head>
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

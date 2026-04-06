@@ -1,3 +1,5 @@
+import { siteConfig } from "@/data/siteContent";
+
 export function SiteFooter() {
   return (
     <footer>
@@ -5,16 +7,19 @@ export function SiteFooter() {
         <div className="left box">
           <h2>About us</h2>
           <div className="content">
-            <p>
-              Zelha Spin & Fitness is a high-energy, customer-focused gym in Juja, Kenya. We help
-              students and professionals train consistently through coached classes and community support.
-            </p>
+            <p>{siteConfig.description}</p>
             <div className="footsocial">
-              <a href="#" aria-label="Facebook">
-                <span className="fa fa-facebook-f"></span>
+              <a href={siteConfig.socialLinks.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <span className="fa fa-facebook-f" aria-hidden="true"></span>
               </a>
-              <a href="#" aria-label="Instagram">
-                <span className="fa fa-instagram"></span>
+              <a href={siteConfig.socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <span className="fa fa-instagram" aria-hidden="true"></span>
+              </a>
+              <a href={siteConfig.socialLinks.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <span className="fa fa-music" aria-hidden="true"></span>
+              </a>
+              <a href={`https://wa.me/254${siteConfig.whatsapp.replace(/^0/, "")}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <span className="fa fa-whatsapp" aria-hidden="true"></span>
               </a>
             </div>
           </div>
@@ -23,16 +28,16 @@ export function SiteFooter() {
           <h2>Address</h2>
           <div className="Footercontent">
             <div className="place">
-              <span className="fas fa-map-marker-alt"></span>
-              <span className="text">Juja, Kenya</span>
+              <span className="fas fa-map-marker-alt" aria-hidden="true"></span>
+              <span className="text">{siteConfig.landmark}</span>
             </div>
             <div className="phone">
-              <span className="fas fa-phone-alt"></span>
-              <span className="text">0110 719277 / 0726 061454 / 0725 512877</span>
+              <span className="fas fa-phone-alt" aria-hidden="true"></span>
+              <span className="text">{siteConfig.phoneNumbers.join(" / ")}</span>
             </div>
             <div className="email">
-              <span className="fas fa-envelope"></span>
-              <span className="text">info@zelhaspinfitness.co.ke</span>
+              <span className="fas fa-envelope" aria-hidden="true"></span>
+              <span className="text">{siteConfig.email}</span>
             </div>
           </div>
         </div>
@@ -57,8 +62,8 @@ export function SiteFooter() {
       </div>
       <div className="bottom">
         <center>
-          <span className="credit">Zelha Spin & Fitness | </span>
-          <span className="far fa-copyright"></span>
+          <span className="credit">{siteConfig.name} | </span>
+          <span className="far fa-copyright" aria-hidden="true"></span>
           <span> {new Date().getFullYear()} All rights reserved.</span>
         </center>
       </div>

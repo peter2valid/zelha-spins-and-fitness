@@ -59,11 +59,18 @@ header.sticky .menu a{
   color: #000;
 }
 
+header .brand .brand-logo-wrapper {
+  width: 140px;
+  overflow: hidden;
+  display: flex;
+}
+
 header .brand img{
- width: 170px;
-    height: 100%;
-    display: flex;
-    cursor: pointer;
+  width: 170px;
+  height: auto;
+  cursor: pointer;
+  object-fit: cover;
+  object-position: left;
 }
 
 header .menu{
@@ -114,7 +121,7 @@ header .btnnn{
   color: #b21919;
 }
 /*RESPONSIVE HEADER*/
-@media (max-width: 1060px){
+@media (max-width: 768px){
   header .btnnn{
     display: block;
   }
@@ -232,14 +239,15 @@ header .btnnn{
   cursor: pointer;
 }
 .home img{
-	background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
-  z-index: 000;
+  background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7));
+  z-index: 0;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  will-change: opacity;
 }
 
 .slider-navigation{
@@ -276,13 +284,16 @@ header .btnnn{
 .img-slide{
   position: absolute;
   width: 100%;
-  clip-path: circle(0% at 0 50%);
+  opacity: 0;
+  transform: scale(1.02);
+  will-change: opacity, transform;
 }
 
 .img-slide.active{
-  clip-path: circle(150% at 0 50%);
+  opacity: 1;
+  transform: scale(1);
   transition: 2s ease;
-  transition-property: clip-path;
+  transition-property: opacity, transform;
 }
 /*RESPONSIVE HOME*/
 @media (max-width: 900px){
@@ -762,11 +773,8 @@ padding-bottom: 105px;
   margin: auto;
   background: #212121;
 }
-.schedule-table table thead{
-  /*border: 2px solid #000;*/
-}
 .schedule-table table thead tr {
-  background:#212121;;
+  background:#212121;
   border: 1px solid #000;
 }
 .schedule-table table thead tr th {
@@ -778,12 +786,7 @@ padding-bottom: 105px;
   padding: 25px 0;
   border-bottom: 1px solid #171717;
 }
-.schedule-table table tbody {
- /* border-top: 1px solid #000;*/
-}
-.schedule-table table tbody tr {
-  /*border-bottom: 1px solid #000;*/
-}
+
 .schedule-table table tbody tr:nth-child(even) {
   background: #212121;
 }
@@ -977,7 +980,7 @@ ul{
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1275,12 +1278,18 @@ body {
 
 .schedule-table {
   height: auto;
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 .schedule-table table {
   min-width: 900px;
 }
+
+.mobile-schedule-cards {
+  display: none !important;
+}
+
 
 .right form input,
 .right form textarea,
@@ -1304,7 +1313,7 @@ body {
   }
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 768px) {
   header .menu {
     width: min(86vw, 400px);
     min-width: 0;
@@ -1520,14 +1529,14 @@ body {
   }
 
   .schedule-table {
-    display: none;
+    display: block;
+    overflow-x: auto;
   }
 
   .mobile-schedule-cards {
-    display: grid;
-    gap: 12px;
-    margin: 10px 8px 0;
+    display: none;
   }
+
 
   .mobile-schedule-card {
     border: 1px solid #2c2c2c;
@@ -1676,5 +1685,123 @@ body {
 @supports (-webkit-touch-callout: none) {
   .cta-section {
     background-attachment: scroll;
+  }
+}
+
+/* --- TEAM SECTION (COACHES) MOVED FROM ABOUT.CSS --- */
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-section {
+  background-color: #000;
+  min-height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.team-section .section-title {
+  flex-basis: 100%;
+  max-width: 100%;
+  margin-bottom: 70px;
+}
+
+.team-section .section-title h1 {
+  text-transform: uppercase;
+  color: #b21919;
+  font-size: 60px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.team-section .section-title p {
+  font-size: 16px;
+  text-align: center;
+  margin: 10px 0 0;
+  color: #ffffff;
+}
+
+.team-section .team-items {
+  flex-basis: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.team-section .team-items .item {
+  flex-basis: calc(25% - 30px);
+  max-width: calc(25% - 30px);
+  transition: all 0.5s ease;
+  margin-bottom: 40px;
+}
+
+.team-section .team-items .item img {
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.team-section .team-items .item .inner {
+  position: relative;
+  z-index: 11;
+  padding: 0 15px;
+}
+
+.team-section .team-items .item .inner .info {
+  background-color: #1F2322;
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+  margin-top: -40px;
+}
+
+.team-section .team-items .item:hover .info {
+  transform: translateY(-20px);
+}
+
+.team-section .team-items .item:hover {
+  transform: translateY(-10px);
+}
+
+.team-section .team-items .item .inner .info h5 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.team-section .team-items .item .inner .info p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #c5c5c5;
+  margin: 10px 0 0;
+}
+
+@media(max-width: 991px) {
+  .team-section .team-items .item {
+    flex-basis: calc(50% - 30px);
+    max-width: calc(50% - 30px);
+  }
+}
+
+@media(max-width: 767px) {
+  .team-section .section-title h1 {
+    font-size: 40px;
+  }
+  .team-section .team-items .item {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 }

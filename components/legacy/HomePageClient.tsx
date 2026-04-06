@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/legacy/SiteHeader";
 import { SiteFooter } from "@/components/legacy/SiteFooter";
 import {
   classHighlights,
+  coaches,
   galleryItems,
   heroSlides,
   programPillars,
@@ -171,8 +172,8 @@ export function HomePageClient() {
               <div className="info">
                 <h1>{item.title.toUpperCase()}</h1>
                 <p>{item.description}</p>
-                <Link href="/about" className="btn">
-                  Read More
+                <Link href="/contact" className="btn">
+                  Book a Class
                 </Link>
               </div>
             </div>
@@ -248,6 +249,7 @@ export function HomePageClient() {
                 <div className="p-card" key={item.title}>
                   <div className="box">
                     <i
+                      aria-hidden="true"
                       className={`fa ${
                         index === 0
                           ? "fa-dumbbell"
@@ -323,9 +325,10 @@ export function HomePageClient() {
 
                         return (
                           <li key={`${row.time}-${day.key}`} className={slot.className}>
-                            <p className="day">{day.label}</p>
+                            <i className="fas fa-mobile-alt" aria-hidden="true"></i>
                             <p className="title">{slot.title}</p>
                             <p className="time">{slot.span}</p>
+                            <i className="fas fa-check" aria-hidden="true"></i>
                             <p className="coach">{slot.trainer}</p>
                           </li>
                         );
@@ -339,14 +342,40 @@ export function HomePageClient() {
         </div>
       </section>
 
+      {/* OUR COACHES */}
+      <section className="team-section">
+        <div className="container">
+          <div className="row">
+            <div className="section-title">
+              <h1>Our Coaches</h1>
+              <p>Meet Levis and Martin — the team behind every spin session, HIIT class, and strength program at Zelha.</p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="team-items">
+              {coaches.map((coach) => (
+                <div className="item" key={coach.name}>
+                  <img src={coach.image.replace("/images", "/img")} alt={coach.name} loading="lazy" decoding="async" />
+                  <div className="inner">
+                    <div className="info">
+                      <h5>{coach.name}</h5>
+                      <p>{coach.role}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="cta-section">
-        <h2>Start Building Your Body with Professional Zelha Coaches</h2>
+        <h2>Start Training with the Zelha Team</h2>
         <p>
-          Find us in {siteConfig.location}, {siteConfig.landmark}. Build consistency with the Zelha
-          fitness community.
+          Located at {siteConfig.landmark}. Join a fitness community that keeps you consistent.
         </p>
-        <Link href="/about" className="primary-btn">
-          More about us
+        <Link href="/contact" className="primary-btn">
+          Book a Class
         </Link>
       </section>
 

@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/legacy/SiteHeader";
 import { SiteFooter } from "@/components/legacy/SiteFooter";
 import { buildMetadata } from "@/lib/seo";
 import { membershipPlans } from "@/data/siteContent";
+import "../../css/Pricing.css";
 
 export const metadata = buildMetadata({
   title: "Membership",
@@ -24,7 +25,7 @@ export default function PricingPage() {
         </Link>
       </div>
 
-      <div className="wrapper-card" style={{ backgroundColor: "#000" }}>
+      <div className="wrapper-card">
           {membershipPlans.map((plan) => (
             <div className={`card ${plan.featured ? "popular" : ""}`} key={plan.name}>
               <div className="card-title">

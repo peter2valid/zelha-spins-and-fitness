@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { siteConfig } from "@/data/siteContent";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,31 +17,35 @@ export function SiteHeader() {
   return (
     <header className={sticky ? "sticky" : ""}>
       <div className="brand">
-        <img src="/img/LOGO4.png" alt="Zelha Spin and Fitness brand" />
+        <div className="brand-logo-wrapper">
+          <img src="/img/LOGO4.png" alt="Zelha Spin and Fitness brand" />
+        </div>
       </div>
       <div className={`menu ${menuOpen ? "active" : ""}`}>
         <div className="btnnn btn">
-          <i className="fas fa-times close-btn" onClick={() => setMenuOpen(false)}></i>
+          <i className="fas fa-times close-btn" onClick={() => setMenuOpen(false)} aria-hidden="true"></i>
         </div>
         <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
         <Link href="/pricing">Pricing</Link>
         <Link href="/contact">Contact</Link>
-        <Link href="/classes">Login</Link>
+        <Link href="/contact">Book a Class</Link>
       </div>
       <div className="btnnn btn">
-        <i className="fas fa-bars menu-btn" style={{ color: "#000" }} onClick={() => setMenuOpen(true)}></i>
+        <i className="fas fa-bars menu-btn" style={{ color: "#000" }} onClick={() => setMenuOpen(true)} aria-hidden="true"></i>
       </div>
 
       <div className="social">
-        <a href="#" aria-label="Facebook">
-          <i className="fa fa-facebook-f"></i>
+        <a href={siteConfig.socialLinks.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i className="fa fa-facebook-f" aria-hidden="true"></i>
         </a>
-        <a href="#" aria-label="Instagram">
-          <i className="fa fa-instagram"></i>
+        <a href={siteConfig.socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i className="fa fa-instagram" aria-hidden="true"></i>
         </a>
-        <a href="#" aria-label="Twitter">
-          <i className="fa fa-twitter"></i>
+        <a href={siteConfig.socialLinks.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <i className="fa fa-music" aria-hidden="true"></i>
+        </a>
+        <a href={`https://wa.me/254${siteConfig.whatsapp.replace(/^0/, "")}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <i className="fa fa-whatsapp" aria-hidden="true"></i>
         </a>
       </div>
     </header>
