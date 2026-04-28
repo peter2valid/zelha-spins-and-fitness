@@ -3,12 +3,13 @@ import { SiteFooter } from "@/components/legacy/SiteFooter";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/siteContent";
 import { ContactForm } from "./ContactForm";
+import { Mail, MapPin, PhoneCall, MessageCircleMore } from "lucide-react";
 import "../../css/Contact.css";
 
 export const metadata = buildMetadata({
   title: "Contact",
   description:
-    "Contact Zelha Spin and Fitness Gym at Kalimoni Highway View Plaza, Juja, Kenya. Call 0702836266 or email zelhafitness@gmail.com for memberships and class bookings.",
+    "Contact Zelha Spin & Fitness in Juja for memberships, class bookings, coaching, and WhatsApp support.",
   path: "/contact"
 });
 
@@ -28,33 +29,35 @@ export default function ContactPage() {
 
         <div className="contact-body">
           <div className="contact-info">
-            <div>
-              <span>
-                <i className="fas fa-mobile-alt" aria-hidden="true"></i>
+            <div className="contact-info__item">
+              <span className="contact-info__icon" aria-hidden="true">
+                <PhoneCall size={26} />
               </span>
               <span>Phone No.</span>
               <span className="text">{siteConfig.phoneNumbers.join(" / ")}</span>
             </div>
-            <div>
-              <span>
-                <i className="fas fa-envelope-open" aria-hidden="true"></i>
+            <div className="contact-info__item">
+              <span className="contact-info__icon" aria-hidden="true">
+                <Mail size={26} />
               </span>
               <span>E-mail</span>
               <span className="text">{siteConfig.email}</span>
             </div>
-            <div>
-              <span>
-                <i className="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <div className="contact-info__item">
+              <span className="contact-info__icon" aria-hidden="true">
+                <MapPin size={26} />
               </span>
               <span>Address</span>
               <span className="text">{siteConfig.landmark}</span>
             </div>
-            <div>
-              <span>
-                <i className="fas fa-clock" aria-hidden="true"></i>
+            <div className="contact-info__item">
+              <span className="contact-info__icon" aria-hidden="true">
+                <MessageCircleMore size={26} />
               </span>
               <span>WhatsApp</span>
-              <span className="text">{siteConfig.whatsapp}</span>
+              <a className="text contact-info__link" href={siteConfig.whatsappUrl} target="_blank" rel="noreferrer">
+                {siteConfig.whatsapp}
+              </a>
             </div>
           </div>
 

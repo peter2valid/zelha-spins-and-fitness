@@ -164,6 +164,7 @@ header .btn{
    background: radial-gradient(ellipse at center, rgba(181, 8, 8, 0.38) 0%, rgba(0, 0, 0, 0.6) 100%);
     background-image: radial-gradient(at center center, rgba(181, 8, 8, 0.38) 0%, rgba(0, 0, 0, 0.6) 100%), url('../img/bgbanner2.jpg');
      height: 70vh;
+    padding-top: 88px;
     background-position: center;
     background-size: cover;
   flex: 1;
@@ -209,6 +210,7 @@ header .btn{
             max-width: 1200px;
             width: 100%;
             box-sizing: border-box;
+      align-items: stretch;
         }
         
         .card {
@@ -217,13 +219,16 @@ header .btn{
             box-shadow: 0 4px 16px rgba(0,0,0,0.15);
             padding: 36px 28px;
             position: relative;
-            text-align: center;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
             transition: all 0.35s ease-in-out;
         }
         
         .card.popular {
             border: 2px solid #b21919;
-            transform: scale(1.03);
+          transform: translateY(-6px);
         }
         
         .card.popular .card-title h3 {
@@ -237,7 +242,7 @@ header .btn{
         
         .card.popular .card-price h1 {
             color: #b21919;
-            font-size: 60px;
+          font-size: 3.4rem;
         }
         
         .card.popular .card-action button {
@@ -306,22 +311,26 @@ header .btn{
         }
         
         .card-title h3 {
-            color: rgba(0, 0, 0, 0.7);
-            font-size: 15px;
+          color: rgba(0, 0, 0, 0.75);
+          font-size: 2rem;
             text-transform: uppercase;
         }
         
         .card-title h4 {
-            color: rgba(0, 0, 0, 0.6);
+          color: rgba(0, 0, 0, 0.62);
+          font-size: 1.35rem;
+          margin-top: 0.6rem;
+          min-height: 3.2rem;
         }
         
         .card-price {
-            margin: 60px 0;
+          margin: 24px 0 18px;
         }
         
         .card-price h1 {
-            font-size: 46px;
+          font-size: 3.4rem;
             color: #000;
+          line-height: 1.05;
         }
         
         .card-price h1 sup {
@@ -340,16 +349,19 @@ header .btn{
         }
         
         .card-description ul {
-            display: block;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
             list-style: none;
-            margin: 60px 0;
+          margin: 0 0 28px;
             padding: 0;
+          text-align: left;
         }
         
         .card-description li {
             color: rgba(0, 0, 0, 0.6);
-            font-size: 15px;
-            margin: 0 0 15px;
+          font-size: 1.5rem;
+          margin: 0;
         }
         
         .card-description li::before {
@@ -380,6 +392,32 @@ header .btn{
             box-shadow: 0 2px 4px #000;
             color: #fff;
             font-size: 17px;
+        }
+
+.card-action {
+  margin-top: auto;
+}
+
+        .card-link {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 60px;
+          border: 2px solid #b21919;
+          border-radius: 30px;
+          color: #b21919;
+          font-size: 15px;
+          font-weight: bold;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .card-link:hover {
+          background-color: #b21919;
+          box-shadow: 0 2px 4px #000;
+          color: #fff;
         }
 
 /*FOOTER*/

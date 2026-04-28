@@ -3,6 +3,28 @@ import { Clock3, Facebook, Instagram, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/data/siteContent";
 
 export function Footer() {
+  const socialLinks: Array<{
+    href: string;
+    label: string;
+    icon: typeof Instagram;
+  }> = [];
+
+  if (siteConfig.socialLinks.instagram) {
+    socialLinks.push({
+      href: siteConfig.socialLinks.instagram,
+      label: "Instagram",
+      icon: Instagram
+    });
+  }
+
+  if (siteConfig.socialLinks.facebook) {
+    socialLinks.push({
+      href: siteConfig.socialLinks.facebook,
+      label: "Facebook",
+      icon: Facebook
+    });
+  }
+
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
@@ -12,14 +34,15 @@ export function Footer() {
             High-energy gym in Juja, Kenya, known for spinning, strength, dance fitness, and
             personalized coaching.
           </p>
-          <div className="footer-social">
-            <a href={siteConfig.socialLinks.instagram} aria-label="Instagram">
-              <Instagram size={18} />
-            </a>
-            <a href={siteConfig.socialLinks.facebook} aria-label="Facebook">
-              <Facebook size={18} />
-            </a>
-          </div>
+          {socialLinks.length > 0 ? (
+            <div className="footer-social">
+              {socialLinks.map(({ href, label, icon: Icon }) => (
+                <a key={label} href={href} aria-label={label} target="_blank" rel="noreferrer">
+                  <Icon size={18} />
+                </a>
+              ))}
+            </div>
+          ) : null}
         </section>
 
         <section>

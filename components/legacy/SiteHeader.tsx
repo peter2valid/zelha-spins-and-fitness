@@ -2,11 +2,42 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Facebook, Instagram, Menu, Music2, X } from "lucide-react";
 import { siteConfig } from "@/data/siteContent";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
+
+  const socialLinks: Array<{
+    href: string;
+    label: string;
+    icon: typeof Instagram;
+  }> = [];
+
+  if (siteConfig.socialLinks.instagram) {
+    socialLinks.push({
+      href: siteConfig.socialLinks.instagram,
+      label: "Instagram",
+      icon: Instagram
+    });
+  }
+
+  if (siteConfig.socialLinks.facebook) {
+    socialLinks.push({
+      href: siteConfig.socialLinks.facebook,
+      label: "Facebook",
+      icon: Facebook
+    });
+  }
+
+  if (siteConfig.socialLinks.tiktok) {
+    socialLinks.push({
+      href: siteConfig.socialLinks.tiktok,
+      label: "TikTok",
+      icon: Music2
+    });
+  }
 
   useEffect(() => {
     const onScroll = () => setSticky(window.scrollY > 0);
@@ -16,38 +47,35 @@ export function SiteHeader() {
 
   return (
     <header className={sticky ? "sticky" : ""}>
-      <div className="brand">
-        <div className="brand-logo-wrapper">
-          <img src="/img/LOGO4.png" alt="Zelha Spin and Fitness brand" />
-        </div>
-      </div>
+      <Link className="brand" href="/" aria-label="Zelha Spin & Fitness home">
+        <span className="brand-mark" aria-hidden>
+          <span className="brand-mark__glyph">Z</span>
+        </span>
+        <span className="brand-name">{siteConfig.shortName}</span>
+      </Link>
       <div className={`menu ${menuOpen ? "active" : ""}`}>
-        <div className="btnnn btn">
-          <i className="fas fa-times close-btn" onClick={() => setMenuOpen(false)} aria-hidden="true"></i>
-        </div>
-        <Link href="/">Home</Link>
-        <Link href="/pricing">Pricing</Link>
-        <Link href="/contact">Contact</Link>
-        <Link href="/contact">Book a Class</Link>
+        <button className="btnnn btn" type="button" aria-label="Close navigation" onClick={() => setMenuOpen(false)}>
+          <X className="close-btn" size={24} />
+        </button>
+        <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link href="/about" onClick={() => setMenuOpen(false)}>About</Link>
+        <Link href="/classes" onClick={() => setMenuOpen(false)}>Classes</Link>
+        <Link href="/pricing" onClick={() => setMenuOpen(false)}>Pricing</Link>
+        <Link href="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
       </div>
-      <div className="btnnn btn">
-        <i className="fas fa-bars menu-btn" style={{ color: "#000" }} onClick={() => setMenuOpen(true)} aria-hidden="true"></i>
-      </div>
+      <button className="btnnn btn" type="button" aria-label="Open navigation" onClick={() => setMenuOpen(true)}>
+        <Menu className="menu-btn" size={24} />
+      </button>
 
-      <div className="social">
-        <a href={siteConfig.socialLinks.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <i className="fa fa-facebook-f" aria-hidden="true"></i>
-        </a>
-        <a href={siteConfig.socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <i className="fa fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href={siteConfig.socialLinks.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-          <i className="fa fa-music" aria-hidden="true"></i>
-        </a>
-        <a href={`https://wa.me/254${siteConfig.whatsapp.replace(/^0/, "")}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-          <i className="fa fa-whatsapp" aria-hidden="true"></i>
-        </a>
-      </div>
+      {socialLinks.length > 0 ? (
+        <div className="social">
+          {socialLinks.map(({ href, label, icon: Icon }) => (
+            <a key={label} href={href} aria-label={label} target="_blank" rel="noreferrer">
+              <Icon size={18} aria-hidden />
+            </a>
+          ))}
+        </div>
+      ) : null}
     </header>
   );
 }

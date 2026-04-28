@@ -6,9 +6,9 @@ import { SiteHeader } from "@/components/legacy/SiteHeader";
 import { SiteFooter } from "@/components/legacy/SiteFooter";
 import {
   classHighlights,
-  coaches,
   galleryItems,
   heroSlides,
+  coaches,
   programPillars,
   siteConfig,
   whyChooseUs
@@ -130,7 +130,7 @@ export function HomePageClient() {
           <img
             key={slide.title}
             className={`img-slide ${index === activeSlide ? "active" : ""}`}
-            src={slide.image.replace("/images", "/img")}
+            src={slide.image}
             alt={slide.subtitle}
             loading={index === 0 ? "eager" : "lazy"}
             decoding="async"
@@ -168,12 +168,12 @@ export function HomePageClient() {
         <div className="wrapper">
           {whyChooseUs.map((item) => (
             <div className="card" key={item.title}>
-              <img src={item.image.replace("/images", "/img")} alt={item.title} loading="lazy" decoding="async" />
+              <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
               <div className="info">
                 <h1>{item.title.toUpperCase()}</h1>
                 <p>{item.description}</p>
-                <Link href="/contact" className="btn">
-                  Book a Class
+                <Link href="/about" className="btn">
+                  Read More
                 </Link>
               </div>
             </div>
@@ -249,7 +249,6 @@ export function HomePageClient() {
                 <div className="p-card" key={item.title}>
                   <div className="box">
                     <i
-                      aria-hidden="true"
                       className={`fa ${
                         index === 0
                           ? "fa-dumbbell"
@@ -325,10 +324,9 @@ export function HomePageClient() {
 
                         return (
                           <li key={`${row.time}-${day.key}`} className={slot.className}>
-                            <i className="fas fa-mobile-alt" aria-hidden="true"></i>
+                            <p className="day">{day.label}</p>
                             <p className="title">{slot.title}</p>
                             <p className="time">{slot.span}</p>
-                            <i className="fas fa-check" aria-hidden="true"></i>
                             <p className="coach">{slot.trainer}</p>
                           </li>
                         );
@@ -342,40 +340,14 @@ export function HomePageClient() {
         </div>
       </section>
 
-      {/* OUR COACHES */}
-      <section className="team-section">
-        <div className="container">
-          <div className="row">
-            <div className="section-title">
-              <h1>Our Coaches</h1>
-              <p>Meet Levis and Martin — the team behind every spin session, HIIT class, and strength program at Zelha.</p>
-            </div>
-          </div>
-          <div className="row">
-            <div className="team-items">
-              {coaches.map((coach) => (
-                <div className="item" key={coach.name}>
-                  <img src={coach.image.replace("/images", "/img")} alt={coach.name} loading="lazy" decoding="async" />
-                  <div className="inner">
-                    <div className="info">
-                      <h5>{coach.name}</h5>
-                      <p>{coach.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="cta-section">
-        <h2>Start Training with the Zelha Team</h2>
+        <h2>Start Building Your Body with Professional Zelha Coaches</h2>
         <p>
-          Located at {siteConfig.landmark}. Join a fitness community that keeps you consistent.
+          Find us in {siteConfig.location}, {siteConfig.landmark}. Build consistency with the Zelha
+          fitness community.
         </p>
-        <Link href="/contact" className="primary-btn">
-          Book a Class
+        <Link href="/about" className="primary-btn">
+          More about us
         </Link>
       </section>
 
@@ -387,7 +359,7 @@ export function HomePageClient() {
           {galleryItems.map((item) => (
             <div className="image-box" key={item.label}>
               <img
-                src={item.image.replace("/images", "/img")}
+                src={item.image}
                 alt={item.label}
                 loading="lazy"
                 decoding="async"
@@ -395,14 +367,35 @@ export function HomePageClient() {
               <div className="overlay">
                 <div className="details">
                   <h3 className="title">
-                    <a href="#">{item.label}</a>
+                    <Link href="/classes">{item.label}</Link>
                   </h3>
                   <span className="category">
-                    <a href="#">click for more details</a>
+                    <Link href="/contact">click for more details</Link>
                   </span>
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="coaches-section">
+        <div className="title">
+          <h1>Meet Our Coaches</h1>
+          <p>Friendly trainers who help you stay consistent, safe, and motivated.</p>
+        </div>
+        <div className="coaches-grid">
+          {coaches.map((coach) => (
+            <article className="coach-card" key={coach.name}>
+              <img src={coach.image} alt={coach.name} loading="lazy" decoding="async" />
+              <div className="coach-card__body">
+                <h3>{coach.name}</h3>
+                <p>{coach.role}</p>
+                <Link href="/contact" className="btn">
+                  Train with us
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
       </section>

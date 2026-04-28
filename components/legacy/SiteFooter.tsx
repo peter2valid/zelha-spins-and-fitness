@@ -1,42 +1,71 @@
+import { Facebook, Instagram, MapPin, Phone, Mail, Music2 } from "lucide-react";
 import { siteConfig } from "@/data/siteContent";
 
 export function SiteFooter() {
+  const socialLinks: Array<{
+    href: string;
+    label: string;
+    icon: typeof Instagram;
+  }> = [];
+
+  if (siteConfig.socialLinks.instagram) {
+    socialLinks.push({
+      href: siteConfig.socialLinks.instagram,
+      label: "Instagram",
+      icon: Instagram
+    });
+  }
+
+  if (siteConfig.socialLinks.facebook) {
+    socialLinks.push({
+      href: siteConfig.socialLinks.facebook,
+      label: "Facebook",
+      icon: Facebook
+    });
+  }
+
+  if (siteConfig.socialLinks.tiktok) {
+    socialLinks.push({
+      href: siteConfig.socialLinks.tiktok,
+      label: "TikTok",
+      icon: Music2
+    });
+  }
+
   return (
     <footer>
       <div className="main-content">
         <div className="left box">
-          <h2>About us</h2>
+          <h2>{siteConfig.shortName}</h2>
           <div className="content">
-            <p>{siteConfig.description}</p>
-            <div className="footsocial">
-              <a href={siteConfig.socialLinks.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <span className="fa fa-facebook-f" aria-hidden="true"></span>
-              </a>
-              <a href={siteConfig.socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <span className="fa fa-instagram" aria-hidden="true"></span>
-              </a>
-              <a href={siteConfig.socialLinks.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                <span className="fa fa-music" aria-hidden="true"></span>
-              </a>
-              <a href={`https://wa.me/254${siteConfig.whatsapp.replace(/^0/, "")}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <span className="fa fa-whatsapp" aria-hidden="true"></span>
-              </a>
-            </div>
+            <p>
+              Zelha Spin & Fitness is a high-energy, customer-focused gym in Juja, Kenya. We help
+              students and professionals train consistently through coached classes and community support.
+            </p>
+            {socialLinks.length > 0 ? (
+              <div className="footsocial">
+                {socialLinks.map(({ href, label, icon: Icon }) => (
+                  <a key={label} href={href} aria-label={label} target="_blank" rel="noreferrer">
+                    <Icon size={16} aria-hidden />
+                  </a>
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
         <div className="center box">
           <h2>Address</h2>
           <div className="Footercontent">
             <div className="place">
-              <span className="fas fa-map-marker-alt" aria-hidden="true"></span>
-              <span className="text">{siteConfig.landmark}</span>
+              <MapPin size={16} aria-hidden />
+              <span className="text">Juja, Kenya</span>
             </div>
             <div className="phone">
-              <span className="fas fa-phone-alt" aria-hidden="true"></span>
+              <Phone size={16} aria-hidden />
               <span className="text">{siteConfig.phoneNumbers.join(" / ")}</span>
             </div>
             <div className="email">
-              <span className="fas fa-envelope" aria-hidden="true"></span>
+              <Mail size={16} aria-hidden />
               <span className="text">{siteConfig.email}</span>
             </div>
           </div>
@@ -63,8 +92,7 @@ export function SiteFooter() {
       <div className="bottom">
         <center>
           <span className="credit">{siteConfig.name} | </span>
-          <span className="far fa-copyright" aria-hidden="true"></span>
-          <span> {new Date().getFullYear()} All rights reserved.</span>
+          <span>© {new Date().getFullYear()} All rights reserved.</span>
         </center>
       </div>
     </footer>

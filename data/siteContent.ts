@@ -1,27 +1,21 @@
 export const siteConfig = {
-  name: "Zelha Spin and Fitness Gym",
+  name: "Zelha Spin & Fitness",
   shortName: "Zelha",
-  tagline: "Your Premier Fitness Companion",
-  description:
-    "We are committed to providing a safe and motivating space that makes you want to work out, ensuring your fitness journey is enjoyable and successful.",
   location: "Juja, Kenya",
-  landmark: "Kalimoni Highway View Plaza (Former Uchumi), Juja, Kenya",
-  email: "zelhafitness@gmail.com",
-  phoneNumbers: ["0702836266", "0110 719277"],
-  whatsapp: "0702836266",
+  landmark: "Next to Equity Afya in Juja",
+  email: "info@zelhaspinfitness.co.ke",
+  whatsapp: "0726 061454",
+  whatsappUrl: "https://wa.me/254726061454",
+  phoneNumbers: ["0110 719277", "0726 061454", "0725 512877"],
   socialLinks: {
-    instagram: "https://www.instagram.com/zelhafitness",
-    tiktok: "https://www.tiktok.com/@zelhafitness",
-    facebook: "https://www.facebook.com/zelhaaFitness"
+    instagram: null,
+    facebook: null,
+    tiktok: null
   },
   hours: [
-    { label: "Monday", value: "Strength & Conditioning" },
-    { label: "Tuesday", value: "Spin Class 6:30 – 7:30 PM" },
-    { label: "Wednesday", value: "HIIT Class 6:30 – 7:30 PM" },
-    { label: "Thursday", value: "Spin 8:00 – 9:00 AM · Aerobics & Power Training 6:30 – 7:30 PM" },
-    { label: "Friday", value: "Zumba Dance 6:30 – 7:30 PM" },
-    { label: "Saturday", value: "HIIT Class 6:30 – 7:30 PM" },
-    { label: "Sunday", value: "HIIT Class 8:00 – 9:00 AM" }
+    { label: "Weekdays", value: "5:15 AM - 9:45 PM" },
+    { label: "Saturdays", value: "6:30 AM - 8:00 PM" },
+    { label: "Public Holidays", value: "11:00 AM - 3:00 PM" }
   ]
 };
 
@@ -29,7 +23,7 @@ export const heroSlides = [
   {
     image: "/images/hero-cycling.jpg",
     title: "Spin Hard.",
-    subtitle: "Your Premier Fitness Companion",
+    subtitle: "Train Smart in Juja",
     description:
       "Join Juja's high-energy fitness community for instructor-led spin sessions, strength work, and cardio classes that keep you motivated every day."
   },
@@ -38,34 +32,31 @@ export const heroSlides = [
     title: "Build Strength.",
     subtitle: "Move With Purpose",
     description:
-      "From strength training to personal coaching, we provide a safe and motivating space that makes you want to work out every day."
+      "From shoulder presses to full back-day programs, our structured training helps you build muscle, confidence, and consistency."
   },
   {
     image: "/images/hero-hiit.jpg",
     title: "Stay Consistent.",
     subtitle: "Feel The Zelha Energy",
     description:
-      "Whether you are a beginner or advanced athlete, our coaching team helps you train safely and keep progressing. Located at Kalimoni Highway View Plaza, Juja."
+      "Whether you are a beginner or advanced athlete, our coaching team helps you train safely and keep progressing."
   }
 ];
 
 export const whyChooseUs = [
   {
-    title: "Safe & Motivating Space",
-    description:
-      "We are committed to providing an environment that makes you want to work out — every single day.",
+    title: "Supportive Coaching",
+    description: "Friendly trainers who guide your form, progression, and recovery.",
     image: "/images/service-support.jpg"
   },
   {
-    title: "Diverse Classes",
-    description:
-      "Spin, HIIT, Zumba, Strength Training, Boot Camp, Personal Training, and Outdoor Hikes — all under one roof.",
+    title: "Premium Equipment",
+    description: "Train with treadmills, spinning bikes, dumbbells, mats, and recovery tools.",
     image: "/images/service-strength.jpg"
   },
   {
-    title: "Expert Coaches",
-    description:
-      "Levis and Martin are certified in spinning, strength, HIIT, aerobics, kickboxing, calisthenics, and swimming.",
+    title: "Community Energy",
+    description: "A welcoming Juja gym culture where students and professionals train together.",
     image: "/images/service-cycling.jpg"
   }
 ];
@@ -73,79 +64,69 @@ export const whyChooseUs = [
 export const classHighlights = [
   {
     title: "Spinning & Indoor Cycling",
-    description: "High-energy bike sessions led by our certified instructors."
+    description: "High-energy bike sessions led by instructors."
   },
   {
-    title: "HIIT",
-    description: "Interval-focused sessions for endurance, fat loss, and cardiovascular health."
+    title: "Dance Fitness",
+    description: "Zumba and salsa-based classes built for stamina."
   },
   {
-    title: "Strength Training",
-    description: "Progressive resistance and conditioning programs for lean muscle and power."
+    title: "Strength & Weight Training",
+    description: "Muscle-building with progressive resistance routines."
   },
   {
-    title: "Zumba Dance",
-    description: "Rhythm-driven classes that make cardio intense and genuinely enjoyable."
+    title: "HIIT & Cardio",
+    description: "Interval-focused sessions for endurance and fat loss."
   },
   {
-    title: "Personal Training",
-    description: "One-on-one coaching tailored specifically to your goals and schedule."
+    title: "Personalized Training",
+    description: "One-on-one coaching tailored to your goals."
   },
   {
-    title: "Boot Camp & Outdoor Hikes",
-    description: "Group boot camps and organised outdoor hikes for functional fitness."
+    title: "Outdoor Adventures",
+    description: "Group sessions including Sleeping Warrior and Ugali Hike."
   }
 ];
 
 export const programPillars = [
   {
     title: "Spin Power",
-    description: "Cadence drills, climbs, and endurance rides — every Tuesday and Thursday."
+    description: "Cadence drills, climbs, and endurance rides for total-body conditioning."
   },
   {
     title: "Strength Lab",
-    description: "Structured strength and conditioning every Monday, plus power training on Thursdays."
+    description: "Back-day work, shoulder presses, and resistance programs for lean muscle."
   },
   {
     title: "Cardio Engine",
-    description: "High-intensity HIIT blocks every Wednesday, Saturday, and Sunday morning."
+    description: "HIIT-focused blocks to improve speed, endurance, and fat-burning capacity."
   },
   {
     title: "Dance Burn",
-    description: "Zumba dance sessions every Friday evening — cardio that feels like a party."
+    description: "Rhythm-driven classes that make cardio intense and enjoyable."
   }
 ];
 
 export const timetable = [
   {
-    time: "Morning",
-    monday: "–",
-    tuesday: "–",
-    wednesday: "–",
-    thursday: "Spin Class 8:00–9:00 AM",
-    friday: "–",
-    saturday: "–",
-    sunday: "HIIT Class 8:00–9:00 AM"
+    time: "5:30 AM",
+    monday: "Spin Blast",
+    tuesday: "HIIT Cardio",
+    wednesday: "Strength Circuit",
+    thursday: "Spin Blast",
+    friday: "Dance Fitness",
+    saturday: "Outdoor Group",
+    sunday: "Recovery Mobility"
   },
   {
-    time: "All Day (Mon)",
-    monday: "Strength & Conditioning",
-    tuesday: "–",
-    wednesday: "–",
-    thursday: "–",
-    friday: "–",
-    saturday: "–",
-    sunday: "–"
-  },
-  {
-    time: "Evening (6:30 PM)",
-    monday: "–",
-    tuesday: "Spin Class",
-    wednesday: "HIIT Class",
-    thursday: "Aerobics & Power Training",
-    friday: "Zumba Dance",
-    saturday: "HIIT Class",
-    sunday: "–"
+    time: "6:30 PM",
+    monday: "Strength & Weights",
+    tuesday: "Dance Fitness",
+    wednesday: "HIIT Cardio",
+    thursday: "Spinning",
+    friday: "Full Body Conditioning",
+    saturday: "Community Ride",
+    sunday: "Rest"
   }
 ];
 
@@ -160,52 +141,59 @@ export const galleryItems = [
 
 export const coaches = [
   {
-    name: "Levis Alozio",
-    role: "Spinning · Strength · HIIT · Kickboxing · Calisthenics",
+    name: "Coach Brian",
+    role: "Strength & Conditioning",
     image: "/images/trainer-1.jpg"
   },
   {
-    name: "Martin Muturi",
-    role: "Spinning · Strength · HIIT · Aerobics · Swimming",
+    name: "Coach Ruth",
+    role: "Spin & Cardio",
     image: "/images/trainer-2.jpg"
+  },
+  {
+    name: "Coach Kevin",
+    role: "HIIT Specialist",
+    image: "/images/trainer-3.jpg"
+  },
+  {
+    name: "Coach Abby",
+    role: "Dance Fitness",
+    image: "/images/trainer-4.jpg"
   }
 ];
 
 export const membershipPlans = [
   {
-    name: "Regular Membership",
-    summary: "Full gym & class access for everyone",
-    price: "Ksh 3,000 / mo",
-    featured: false,
+    name: "Starter",
+    summary: "For beginners building routine",
+    price: "Contact us",
     features: [
-      "Unlimited gym floor access",
-      "All group classes (Spin, HIIT, Zumba, Boot Camp)",
-      "Personal training add-on available",
-      "Drop-in rate: Ksh 400 / day"
+      "Gym floor access",
+      "2 group classes per week",
+      "Basic progress check"
     ]
   },
   {
-    name: "Student Membership",
-    summary: "Exclusive discount with valid student ID",
-    price: "Ksh 2,500 / mo",
+    name: "Performance",
+    summary: "Best for consistent training",
+    price: "Contact us",
     featured: true,
     features: [
-      "Ksh 500 discount on regular membership",
-      "Unlimited gym floor access",
-      "All group classes included",
-      "Drop-in rate: Ksh 300 / day"
+      "Unlimited gym access",
+      "All group classes",
+      "Monthly coach review",
+      "Recovery tools access"
     ]
   },
   {
-    name: "Personal Training",
-    summary: "One-on-one sessions with certified coaches",
-    price: "Ksh 1,500 / mo",
-    featured: false,
+    name: "Coached",
+    summary: "Tailored one-on-one support",
+    price: "Contact us",
     features: [
-      "Tailored 1:1 coaching sessions",
-      "Custom workout plan",
-      "Specialist coaches: Levis & Martin",
-      "Flexible scheduling"
+      "Personalized training plan",
+      "1:1 trainer sessions",
+      "Nutrition guidance",
+      "Priority support"
     ]
   }
 ];

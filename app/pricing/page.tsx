@@ -43,8 +43,8 @@ export default function PricingPage() {
                 </ul>
               </div>
               <div className="card-action">
-                <Link href="/contact">
-                  <button type="button">Get {plan.name}</button>
+                <Link href="/contact" className="card-link">
+                  Get {plan.name}
                 </Link>
               </div>
             </div>
