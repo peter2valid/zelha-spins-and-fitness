@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { SiteHeader } from "@/components/legacy/SiteHeader";
-import { SiteFooter } from "@/components/legacy/SiteFooter";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { buildMetadata } from "@/lib/seo";
 import { classHighlights } from "@/data/siteContent";
 
@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 export default function ClassesPage() {
   return (
     <>
-      <SiteHeader />
+      <Header />
       <div className="Classes" style={{ marginTop: "90px" }}>
         <h1>Classes & Programs</h1>
         <p>Structured classes in Juja — spinning, strength, HIIT, and dance fitness designed to deliver measurable progress.</p>
@@ -46,7 +46,7 @@ export default function ClassesPage() {
           Book a class or visit
         </Link>
       </div>
-      <SiteFooter />
+      <Footer />
     </>
   );
 }

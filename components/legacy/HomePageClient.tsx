@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { SiteHeader } from "@/components/legacy/SiteHeader";
-import { SiteFooter } from "@/components/legacy/SiteFooter";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import {
   classHighlights,
   galleryItems,
@@ -123,7 +123,7 @@ export function HomePageClient() {
 
   return (
     <>
-      <SiteHeader />
+      <Header />
 
       <section className="home">
         {heroSlides.map((slide, index) => (
@@ -402,7 +402,7 @@ export function HomePageClient() {
         </div>
       </section>
 
-      <SiteFooter />
+      <Footer />
     </>
   );
 }

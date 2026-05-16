@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
 import { coaches, classHighlights, siteConfig } from "@/data/siteContent";
-import { SiteHeader } from "@/components/legacy/SiteHeader";
-import { SiteFooter } from "@/components/legacy/SiteFooter";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 export const metadata = buildMetadata({
   title: "About",
@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 export default function AboutPage() {
   return (
     <>
-      <SiteHeader />
+      <Header />
 
       <main style={{ paddingTop: "88px", color: "#fff", background: "#111" }}>
         <section
@@ -91,7 +91,7 @@ export default function AboutPage() {
         </section>
       </main>
 
-      <SiteFooter />
+      <Footer />
     </>
   );
 }

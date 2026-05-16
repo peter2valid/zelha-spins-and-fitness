@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { SiteHeader } from "@/components/legacy/SiteHeader";
-import { SiteFooter } from "@/components/legacy/SiteFooter";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { buildMetadata } from "@/lib/seo";
 import { membershipPlans } from "@/data/siteContent";
 import "../../css/Pricing.css";
@@ -15,7 +15,7 @@ export const metadata = buildMetadata({
 export default function PricingPage() {
   return (
     <>
-      <SiteHeader />
+      <Header />
 
       <div className="main">
         <h1>Memberships & Pricing</h1>
@@ -51,7 +51,7 @@ export default function PricingPage() {
           ))}
       </div>
 
-      <SiteFooter />
+      <Footer />
     </>
   );
 }

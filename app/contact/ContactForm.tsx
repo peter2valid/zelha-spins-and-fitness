@@ -6,33 +6,40 @@ type FormState = "idle" | "submitting" | "success" | "error";
 
 export function ContactForm() {
   const [state, setState] = useState<FormState>("idle");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setState("submitting");
 
-    // Simulate a form submission (replace with real API call / Formspree / mailto action)
-    await new Promise((resolve) => setTimeout(resolve, 1200));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstName, lastName, email, phone, message })
+      });
 
-    setState("success");
+      if (!res.ok) throw new Error("Failed to submit");
+
+      setState("success");
+    } catch (err) {
+      setState("error");
+    }
   }
 
   if (state === "success") {
     return (
       <div className="form-success" role="status" aria-live="polite">
-        <div className="form-success__icon" aria-hidden>✓</div>
+        <div className="form-success__icon" aria-hidden>
+          ✓
+        </div>
         <h3>Message received!</h3>
-        <p>
-          Thank you for reaching out. A member of the Zelha team will get back
-          to you within 24 hours.
-        </p>
-        <button
-          type="button"
-          className="send-btn"
-          onClick={() => setState("idle")}
-        >
-          Send another message
-        </button>
+        <p>Thank you for reaching out. A member of the Zelha team will get back to you within 24 hours.</p>
+        <button type="button" className="send-btn" onClick={() => setState("idle")}>Send another message</button>
       </div>
     );
   }
@@ -47,6 +54,8 @@ export function ContactForm() {
           required
           disabled={state === "submitting"}
           aria-label="First Name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
         />
         <input
           type="text"
@@ -55,6 +64,8 @@ export function ContactForm() {
           required
           disabled={state === "submitting"}
           aria-label="Last Name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
         />
       </div>
       <div>
@@ -65,6 +76,8 @@ export function ContactForm() {
           required
           disabled={state === "submitting"}
           aria-label="Email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="tel"
@@ -72,6 +85,8 @@ export function ContactForm() {
           placeholder="Phone"
           disabled={state === "submitting"}
           aria-label="Phone number"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
         />
       </div>
       <textarea
@@ -81,6 +96,8 @@ export function ContactForm() {
         required
         disabled={state === "submitting"}
         aria-label="Your message"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
       />
       <input
         type="submit"
@@ -88,6 +105,7 @@ export function ContactForm() {
         value={state === "submitting" ? "Sending…" : "Send Message"}
         disabled={state === "submitting"}
       />
+      {state === "error" ? <p className="form-error">Could not send message — please try again.</p> : null}
     </form>
   );
 }

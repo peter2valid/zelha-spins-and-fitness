@@ -1,5 +1,5 @@
-import { SiteHeader } from "@/components/legacy/SiteHeader";
-import { SiteFooter } from "@/components/legacy/SiteFooter";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/siteContent";
 import { ContactForm } from "./ContactForm";
@@ -16,7 +16,7 @@ export const metadata = buildMetadata({
 export default function ContactPage() {
   return (
     <>
-      <SiteHeader />
+      <Header />
 
       <script
         type="application/ld+json"
@@ -119,7 +119,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <SiteFooter />
+      <Footer />
     </>
   );
 }
