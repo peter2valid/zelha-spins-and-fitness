@@ -8,7 +8,7 @@ export function WhatsAppFloat() {
       href={siteConfig.whatsappUrl}
       aria-label={`Chat with Zelha on WhatsApp at ${siteConfig.whatsapp}`}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
     >
       <MessageCircleMore size={22} aria-hidden />
       <span>WhatsApp</span>

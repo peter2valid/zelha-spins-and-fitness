@@ -15,12 +15,12 @@ import {
 } from "@/data/siteContent";
 
 const classIcons = [
-  "/img/boxing-gloves.png",
-  "/img/swimming.png",
-  "/img/yoga.png",
-  "/img/bodybuilder.png",
-  "/img/cycling.png",
-  "/img/dancing.png"
+  "/images/gallery-boxing.jpg",
+  "/images/service-support.jpg",
+  "/images/gallery-cardio.jpg",
+  "/images/gallery-team.jpg",
+  "/images/hero-cycling.jpg",
+  "/images/gallery-running.jpg"
 ];
 
 const timetableRows = [
@@ -134,6 +134,8 @@ export function HomePageClient() {
             alt={slide.subtitle}
             loading={index === 0 ? "eager" : "lazy"}
             decoding="async"
+            width={1920}
+            height={1080}
           />
         ))}
 
@@ -145,7 +147,7 @@ export function HomePageClient() {
               <span>{slide.subtitle}</span>
             </h1>
             <p>{slide.description}</p>
-            <Link href="/contact">Start Now</Link>
+            <Link href="/contact">Start Your Fitness Journey in Juja Today</Link>
           </div>
         ))}
 
@@ -162,18 +164,18 @@ export function HomePageClient() {
 
       <section className="dishes">
         <div className="title">
-          <h1>WHY PEOPLE CHOOSE US?</h1>
-          <p>Strong coaching, modern equipment, and a fitness community that keeps you consistent.</p>
+          <h1>Why Members Choose Zelha</h1>
+          <p>Coach-led programs, modern equipment, and a local community that helps you keep progress.</p>
         </div>
         <div className="wrapper">
           {whyChooseUs.map((item) => (
             <div className="card" key={item.title}>
               <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
               <div className="info">
-                <h1>{item.title.toUpperCase()}</h1>
+                <h2>{item.title}</h2>
                 <p>{item.description}</p>
                 <Link href="/about" className="btn">
-                  Read More
+                  Learn more
                 </Link>
               </div>
             </div>

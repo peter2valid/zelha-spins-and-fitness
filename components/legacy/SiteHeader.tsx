@@ -70,7 +70,7 @@ export function SiteHeader() {
       {socialLinks.length > 0 ? (
         <div className="social">
           {socialLinks.map(({ href, label, icon: Icon }) => (
-            <a key={label} href={href} aria-label={label} target="_blank" rel="noreferrer">
+            <a key={label} href={href} aria-label={label} target="_blank" rel="noopener noreferrer">
               <Icon size={18} aria-hidden />
             </a>
           ))}

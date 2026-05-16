@@ -23,6 +23,12 @@ export function buildMetadata({
       title: `${title} | ${baseTitle}`,
       description: pageDescription,
       url,
+      images: [
+        {
+          url: `https://zelhaspinfitness.co.ke/images/hero-cycling.jpg`,
+          alt: baseTitle
+        }
+      ],
       siteName: baseTitle,
       locale: "en_KE",
       type: "website"
@@ -31,6 +37,10 @@ export function buildMetadata({
       card: "summary_large_image",
       title: `${title} | ${baseTitle}`,
       description: pageDescription
+    ,
+      images: [
+        `https://zelhaspinfitness.co.ke/images/hero-cycling.jpg`
+      ]
     },
     alternates: {
       canonical: url

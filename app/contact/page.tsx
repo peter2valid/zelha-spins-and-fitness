@@ -18,6 +18,42 @@ export default function ContactPage() {
     <>
       <SiteHeader />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "How do I join Zelha Spin & Fitness?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Contact us via WhatsApp or the contact form to book a trial class or to arrange membership signup."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "Do you offer student discounts?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes — we offer student pricing and flexible plans. Message us on WhatsApp or contact the front desk for eligibility and current offers."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "Where are you located?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We are at Kalimoni Highway View Plaza, Juja — see the contact page map for directions."
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       <section className="contact-section">
         <div className="contact-bg">
           <h3>Get in Touch with Us</h3>
@@ -65,7 +101,7 @@ export default function ContactPage() {
             <ContactForm />
 
             <div>
-              <img src="/img/Contact-us.svg" alt="Contact Zelha" />
+              <img src="/images/about-gym.png" alt="Contact Zelha" />
             </div>
           </div>
 
@@ -87,3 +123,4 @@ export default function ContactPage() {
     </>
   );
 }
+

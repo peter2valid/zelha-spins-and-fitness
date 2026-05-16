@@ -18,10 +18,10 @@ export default function PricingPage() {
       <SiteHeader />
 
       <div className="main">
-        <h1>Pricing</h1>
-        <p>Flexible membership options built for students, professionals, and coached athletes.</p>
+        <h1>Memberships & Pricing</h1>
+        <p>Simple, flexible plans for students, commuters, and coached athletes — contact us for the latest offers and student discounts in Juja.</p>
         <Link href="/contact" className="btn">
-          Learn more
+          Contact us for plan details
         </Link>
       </div>
 
@@ -44,7 +44,7 @@ export default function PricingPage() {
               </div>
               <div className="card-action">
                 <Link href="/contact" className="card-link">
-                  Get {plan.name}
+                  Contact about {plan.name}
                 </Link>
               </div>
             </div>

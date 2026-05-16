@@ -22,41 +22,41 @@ export const siteConfig = {
 export const heroSlides = [
   {
     image: "/images/hero-cycling.jpg",
-    title: "Spin Hard.",
-    subtitle: "Train Smart in Juja",
+    title: "Start Your Fitness Journey in Juja",
+    subtitle: "Instructor-led spin & cardio",
     description:
-      "Join Juja's high-energy fitness community for instructor-led spin sessions, strength work, and cardio classes that keep you motivated every day."
+      "High-energy spin, focused strength work, and coached classes in Juja — small classes, measurable progress, and a community that shows up."
   },
   {
     image: "/images/hero-strength.jpg",
-    title: "Build Strength.",
-    subtitle: "Move With Purpose",
+    title: "Get Stronger, Faster",
+    subtitle: "Structured strength coaching",
     description:
-      "From shoulder presses to full back-day programs, our structured training helps you build muscle, confidence, and consistency."
+      "Progressive strength sessions with coach-led form correction — designed to build resilient muscle and long-term results in Juja." 
   },
   {
     image: "/images/hero-hiit.jpg",
-    title: "Stay Consistent.",
-    subtitle: "Feel The Zelha Energy",
+    title: "Train with Purpose",
+    subtitle: "HIIT, mobility, and recovery",
     description:
-      "Whether you are a beginner or advanced athlete, our coaching team helps you train safely and keep progressing."
+      "Time-efficient HIIT, mobility work, and recovery programming to keep busy students and professionals progressing without overtraining."
   }
 ];
 
 export const whyChooseUs = [
   {
-    title: "Supportive Coaching",
-    description: "Friendly trainers who guide your form, progression, and recovery.",
+    title: "Coach-led Progress",
+    description: "Certified coaches who write programs, check technique, and track measurable progress.",
     image: "/images/service-support.jpg"
   },
   {
-    title: "Premium Equipment",
-    description: "Train with treadmills, spinning bikes, dumbbells, mats, and recovery tools.",
+    title: "Quality Equipment",
+    description: "Modern bikes, free weights, rigs and recovery tools to support strength and endurance training.",
     image: "/images/service-strength.jpg"
   },
   {
-    title: "Community Energy",
-    description: "A welcoming Juja gym culture where students and professionals train together.",
+    title: "Accountability & Community",
+    description: "Small classes, local members, and group sessions that make training consistent and social.",
     image: "/images/service-cycling.jpg"
   }
 ];
@@ -64,27 +64,27 @@ export const whyChooseUs = [
 export const classHighlights = [
   {
     title: "Spinning & Indoor Cycling",
-    description: "High-energy bike sessions led by instructors."
+    description: "Coach-led rides focused on power, cadence, and endurance — suitable for all levels."
   },
   {
     title: "Dance Fitness",
-    description: "Zumba and salsa-based classes built for stamina."
+    description: "High-energy dance classes that build cardio capacity while keeping sessions fun and approachable."
   },
   {
     title: "Strength & Weight Training",
-    description: "Muscle-building with progressive resistance routines."
+    description: "Progressive programming for strength gains, mobility, and injury-conscious coaching."
   },
   {
     title: "HIIT & Cardio",
-    description: "Interval-focused sessions for endurance and fat loss."
+    description: "Short, intense conditioning sessions optimized for results and recovery."
   },
   {
     title: "Personalized Training",
-    description: "One-on-one coaching tailored to your goals."
+    description: "One-to-one coaching and bespoke plans to fast-track specific goals."
   },
   {
-    title: "Outdoor Adventures",
-    description: "Group sessions including Sleeping Warrior and Ugali Hike."
+    title: "Outdoor Sessions",
+    description: "Community rides and occasional outdoor conditioning for variety and endurance."
   }
 ];
 
@@ -165,7 +165,7 @@ export const coaches = [
 export const membershipPlans = [
   {
     name: "Starter",
-    summary: "For beginners building routine",
+    summary: "Entry plan for new members building consistency",
     price: "Contact us",
     features: [
       "Gym floor access",
@@ -175,7 +175,7 @@ export const membershipPlans = [
   },
   {
     name: "Performance",
-    summary: "Best for consistent training",
+    summary: "For committed members training 3+ times weekly",
     price: "Contact us",
     featured: true,
     features: [
@@ -187,7 +187,7 @@ export const membershipPlans = [
   },
   {
     name: "Coached",
-    summary: "Tailored one-on-one support",
+    summary: "Dedicated 1:1 coaching for goal-focused members",
     price: "Contact us",
     features: [
       "Personalized training plan",

@@ -16,19 +16,34 @@ export default function ClassesPage() {
     <>
       <SiteHeader />
       <div className="Classes" style={{ marginTop: "90px" }}>
-        <h1>Our Classes</h1>
-        <p>Programs for spinning, dance fitness, strength, HIIT, and personalized coaching in Juja.</p>
+        <h1>Classes & Programs</h1>
+        <p>Structured classes in Juja — spinning, strength, HIIT, and dance fitness designed to deliver measurable progress.</p>
         <div className="cen">
-          {classHighlights.map((item) => (
+          {classHighlights.map((item, index) => (
             <div className="Classe" key={item.title}>
-              <img src="/img/cycling.png" alt={item.title} />
+              <img
+                src={
+                  index === 0
+                    ? "/images/hero-cycling.jpg"
+                    : index === 1
+                    ? "/images/gallery-cardio.jpg"
+                    : index === 2
+                    ? "/images/service-strength.jpg"
+                    : index === 3
+                    ? "/images/gallery-cardio.jpg"
+                    : index === 4
+                    ? "/images/service-support.jpg"
+                    : "/images/gallery-running.jpg"
+                }
+                alt={item.title}
+              />
               <h2>{item.title}</h2>
               <p>{item.description}</p>
             </div>
           ))}
         </div>
         <Link href="/contact" className="btn">
-          Join a class
+          Book a class or visit
         </Link>
       </div>
       <SiteFooter />

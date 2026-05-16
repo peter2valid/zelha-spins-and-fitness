@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Oswald } from "next/font/google";
 import "./globals.css";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
+import { siteConfig } from "@/data/siteContent";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -28,7 +29,10 @@ export const metadata: Metadata = {
     "spinning classes in Juja",
     "gym near Equity Afya Juja",
     "fitness training in Juja Kenya"
-  ]
+  ],
+  icons: {
+    icon: "/images/about-gym.png"
+  }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -36,6 +40,27 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={oswald.className} suppressHydrationWarning>
         {children}
+        {/* LocalBusiness JSON-LD for improved local SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: siteConfig.name,
+              description: siteConfig.name + " — " + siteConfig.shortName,
+              telephone: siteConfig.phoneNumbers && siteConfig.phoneNumbers[0],
+              email: siteConfig.email,
+              url: "https://zelhaspinfitness.co.ke",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: siteConfig.location,
+                addressCountry: "KE"
+              },
+              sameAs: Object.values(siteConfig.socialLinks).filter(Boolean)
+            })
+          }}
+        />
         <WhatsAppFloat />
       </body>
     </html>

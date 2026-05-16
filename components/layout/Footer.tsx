@@ -36,8 +36,8 @@ export function Footer() {
           </p>
           {socialLinks.length > 0 ? (
             <div className="footer-social">
-              {socialLinks.map(({ href, label, icon: Icon }) => (
-                <a key={label} href={href} aria-label={label} target="_blank" rel="noreferrer">
+                {socialLinks.map(({ href, label, icon: Icon }) => (
+                <a key={label} href={href} aria-label={label} target="_blank" rel="noopener noreferrer">
                   <Icon size={18} />
                 </a>
               ))}
