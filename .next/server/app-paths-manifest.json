@@ -3,9 +3,9 @@
   "/api/contact/route": "app/api/contact/route.js",
   "/robots.txt/route": "app/robots.txt/route.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/classes/page": "app/classes/page.js",
   "/page": "app/page.js",
   "/about/page": "app/about/page.js",
+  "/classes/page": "app/classes/page.js",
   "/pricing/page": "app/pricing/page.js",
   "/contact/page": "app/contact/page.js"
 }

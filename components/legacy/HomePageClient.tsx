@@ -4,15 +4,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import {
-  classHighlights,
-  galleryItems,
-  heroSlides,
-  coaches,
-  programPillars,
-  siteConfig,
-  whyChooseUs
-} from "@/data/siteContent";
+import { classHighlights, galleryItems, coaches, programPillars, siteConfig, whyChooseUs } from "@/data/siteContent";
+import { Hero } from "@/components/features/home/Hero";
 
 const classIcons = [
   "/images/gallery-boxing.jpg",
@@ -111,56 +104,12 @@ function renderSlot(
 }
 
 export function HomePageClient() {
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-
-    return () => window.clearInterval(timer);
-  }, []);
 
   return (
     <>
       <Header />
 
-      <section className="home">
-        {heroSlides.map((slide, index) => (
-          <img
-            key={slide.title}
-            className={`img-slide ${index === activeSlide ? "active" : ""}`}
-            src={slide.image}
-            alt={slide.subtitle}
-            loading={index === 0 ? "eager" : "lazy"}
-            decoding="async"
-            width={1920}
-            height={1080}
-          />
-        ))}
-
-        {heroSlides.map((slide, index) => (
-          <div key={slide.subtitle} className={`SlideContent ${index === activeSlide ? "active" : ""}`}>
-            <h1>
-              {slide.title}
-              <br />
-              <span>{slide.subtitle}</span>
-            </h1>
-            <p>{slide.description}</p>
-            <Link href="/contact">Start Your Fitness Journey in Juja Today</Link>
-          </div>
-        ))}
-
-        <div className="slider-navigation">
-          {heroSlides.map((slide, index) => (
-            <div
-              key={slide.subtitle}
-              className={`nav-btn ${index === activeSlide ? "active" : ""}`}
-              onClick={() => setActiveSlide(index)}
-            ></div>
-          ))}
-        </div>
-      </section>
+      <Hero />
 
       <section className="dishes">
         <div className="title">
