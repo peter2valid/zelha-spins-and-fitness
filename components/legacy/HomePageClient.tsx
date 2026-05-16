@@ -139,7 +139,7 @@ export function HomePageClient() {
           {classHighlights.map((item, index) => (
             <div className="Classe" key={item.title}>
               <img
-                src={classIcons[index] ?? "/img/cycling.png"}
+                src={classIcons[index] ?? "/images/cycling.png"}
                 alt={item.title}
                 loading="lazy"
                 decoding="async"
